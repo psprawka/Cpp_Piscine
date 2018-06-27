@@ -45,7 +45,6 @@ class Account {
 	int				_nbWithdrawals;
 
 	Account( void );
-
 };
 
 

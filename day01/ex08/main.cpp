@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/26 14:53:27 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/27 02:29:26 by psprawka         ###   ########.fr       */
+/*   Created: 2018/06/27 00:23:42 by psprawka          #+#    #+#             */
+/*   Updated: 2018/06/27 01:24:03 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#include "Human.hpp"
 #include <iostream>
-#include <sstream> 
 
-std::string Brain::identify(void) //look how excatly std::ostringstream works
+int main(void)
 {
-	std::ostringstream address;
-	address << (void const *)this;
-	std::string result = address.str();
-	return(result);
-}
+	Human bobo;
 
-Brain::Brain(int iq)
-{
-	this->_iq = iq;
-}
-
-Brain::Brain(void)
-{
-	std::cout << "Brain created\n";
+	bobo.action("meleeAttack", "BoboTheTarget");
+	bobo.action("fakeFunction", "BoboIsNotATarget");
+	bobo.action("", "Bobo");
+	bobo.action("rangedAttack", "SmallBobo");
+	bobo.action("intimidatingShout", "\"Afraid Bobo But Not A Target\"");
+	bobo.action("rangedAttack", "BigBobo");
+	return (0);
 }
