@@ -6,7 +6,7 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/25 07:43:47 by psprawka          #+#    #+#              #
-#    Updated: 2018/06/25 08:09:14 by psprawka         ###   ########.fr        #
+#    Updated: 2018/06/26 23:01:38 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ $(NAME):
 		$(DONE)
 
 fclean:
-	@rm -f $(NAME)
+	@rm -fr $(NAME) $(NAME).dSYM
 	$(CLEAN_A)
 
 re: fclean all 
