@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/26 21:18:12 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/26 22:54:45 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/26 23:48:57 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ std::string	ft_readfile(std::string filename)
 	}
 	std::cout << "Readfile: Unable to open file" << std::endl;
 	exit(1);
-	// return (NULL);
 }
 
 

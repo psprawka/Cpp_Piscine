@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/25 09:53:19 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/25 16:58:53 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/26 23:53:16 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(void)
 	std::string		get_buffer;
 	char			*buff = NULL;
 
-	for (;;)
+	while (std::cin.good())
 	{
 		std::cout << YELLOW << "Waiting for a command... (ADD, SEARCH OR EXIT)\n" << NORMAL;
 		std::cin >> get_buffer;
