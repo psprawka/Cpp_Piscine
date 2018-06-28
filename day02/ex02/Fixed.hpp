@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 05:18:21 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/28 13:30:26 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/28 14:36:18 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,11 @@ class	Fixed
 		bool			operator<=(Fixed const &obj) const;
 		bool			operator!=(Fixed const &obj) const;
 		bool			operator==(Fixed const &obj) const;
+		
+		static Fixed	max(Fixed &a, Fixed &b);
+		static Fixed	min(Fixed &a, Fixed &b);
 		static Fixed	max(Fixed const &a, Fixed const &b);
-		static Fixed	min(Fixed const &a, Fixed const &b);
+		static Fixed 	min(Fixed const &a, Fixed const &b);
 		
 		Fixed(Fixed const &obj);
 		Fixed(const int value);

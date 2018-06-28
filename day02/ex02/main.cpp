@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 05:19:01 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/28 13:52:29 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/28 14:28:37 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ int main(void)
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
-
+	std::cout << Fixed::max(a, b) << std::endl << std::endl;
+	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << a << std::endl << std::endl;
+	
 	Fixed const c( Fixed( 2.25f ) * Fixed( 2 ) );
 	Fixed const d(10);
 	
@@ -33,15 +38,11 @@ int main(void)
 	std::cout << "Add: " <<  c + d << std::endl;
 	std::cout << "Div: " <<  c / d << std::endl;
 	std::cout << "Subs: " << c - d << std::endl;
-	std::cout << Fixed::max(a, b) << std::endl;
-	
+	std::cout << "c != d: " << (c != d) << std::endl;
+	std::cout << "c == d: " << (c == d) << std::endl;
+	std::cout << "c <= d: " << (c <= d) << std::endl;
+	std::cout << "c >= d: " << (c >= d) << std::endl;
+	std::cout << "c > d: " << (c > d) << std::endl;
+	std::cout << "c < d: " << (c < d) << std::endl;
 	return 0;
 }
-
-// 0
-// 0.00390625
-// 0.00390625
-// 0.00390625
-// 0.0078125
-// 10.1016
-// 10.1016

@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/27 05:18:13 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/28 13:30:32 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/28 14:36:08 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,26 @@ int 			Fixed::toInt(void) const
 /*
 **	functions
 */
-Fixed		Fixed::max(Fixed const &a, Fixed const &b)
+Fixed			Fixed::max(Fixed &a, Fixed &b)
 {
 	return (a > b ? a : b);
 }
 
-Fixed			Fixed::min(Fixed const &a, Fixed const &b)
+Fixed			Fixed::min(Fixed &a, Fixed &b)
 {
 	return (a < b ? a : b);
 }
+
+Fixed			Fixed::max(Fixed const &a, Fixed const &b)
+{
+	return (a > b ? a : b);
+}
+
+Fixed 			Fixed::min(Fixed const &a, Fixed const &b)
+{
+	return (a < b ? a : b);
+}
+
 
 /*
 **	operators
@@ -111,38 +122,38 @@ Fixed			Fixed::operator--(int) //--a
 {
 	Fixed tmp (*this);
 	
-	tmp._value--;
+	this->_value--;
 	return (tmp);
 }
 
 bool			Fixed::operator<(Fixed const &obj) const
 {
-	return(this->_value < obj.toFloat());	
+	return(this->toFloat() < obj.toFloat());	
 }
 
 bool			Fixed::operator>(Fixed const &obj) const
 {
-	return(this->_value > obj.toFloat());	
+	return(this->toFloat() > obj.toFloat());	
 }
 
 bool			Fixed::operator>=(Fixed const &obj) const
 {
-	return(this->_value >= obj.toFloat());	
+	return(this->toFloat() >= obj.toFloat());	
 }
 
 bool			Fixed::operator<=(Fixed const &obj) const
 {
-	return(this->_value <= obj.toFloat());	
+	return(this->toFloat() <= obj.toFloat());	
 }
 
 bool			Fixed::operator!=(Fixed const &obj) const
 {
-	return(this->_value != obj.toFloat());	
+	return(this->toFloat() != obj.toFloat());	
 }
 
 bool			Fixed::operator==(Fixed const &obj) const
 {
-	return(this->_value == obj.toFloat());	
+	return(this->toFloat() == obj.toFloat());	
 }
 
 
