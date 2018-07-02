@@ -6,12 +6,12 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 22:04:32 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/30 22:48:11 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/30 23:18:32 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "AMateria.hpp"
+#include "MateriaSource.hpp"
 
 int			MateriaSource::_materias_nb = 0;
 

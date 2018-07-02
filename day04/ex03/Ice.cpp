@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 22:04:01 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/30 22:27:46 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/30 23:47:57 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ AMateria*	Ice::clone(void) const
 
 void		Ice::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << this->_type << " *" << std::endl;
+	std::cout << "woof" << std::endl;
+	(void)target;
+	std::cout << "* shoots an ice bolt at " << "sadface" << " *" << std::endl;
 	this->xp_ += 10;
 }
 
@@ -38,7 +40,7 @@ Ice		&Ice::operator=(Ice const &obj)
 	return (*this);
 }
 
-Ice::Ice(void): _type("ice") {}
+Ice::Ice(void): AMateria("ice") {}
 
 Ice::~Ice(void)
 {

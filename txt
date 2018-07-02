@@ -1,0 +1,15 @@
+friend - funkcje zaprzyjaznione 
+klasa a ma prywatne arg
+klasa b ma prywatne arg
+chcemy porownac ich arg ktora jest wieksza - w tym celu uzyjemy friend funkcji sedzia
+	ktora bedzie miala dostep do prywatnych danych i bedzie mogla porownac;
+
+polimorfizm:
+jest jeden wskaznik typu glownej funkcji (postac). Postac moze przyjac trzy oblicza:
+	-> klasa czlowiek;
+	-> klasa wilk;
+	-> klasa niedzwiedz;
+wszystkie trzy klasy dziedzicza z klasy postac. Wskaznik typu Postac bedzie sobie skalal
+z klasy na klase i to jest polimorfizm - wielopostaciowosc; Klasa postac jest abstrakcyjna
+- nigdy nie stworzymy obiektu tej klasy, wskaznik bedzie istnial tylko po to zeby miec
+mozliwosc polimorfizmu.

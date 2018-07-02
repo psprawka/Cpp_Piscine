@@ -1,35 +1,38 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/06/25 07:43:47 by psprawka          #+#    #+#              #
-#    Updated: 2018/06/30 21:28:04 by psprawka         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME = ft_retro
+CC = clang++
+CFLAGS = -Wall -Wextra -Werror
+DEBUG = -g
 
-NAME			= ft_retro
-COMPILER		= clang++
-FLAGS			= -g -Wall -Wextra -Werror
-FLAGS			+= -fsanitize=address
-FLAGS			+= -lncurses
+SRC_PATH = ./src/
+EXE_PATH = ./bin/
+INCLUDE_PATH = ./include/
+OBJ_PATH = ./obj/
 
-SRCS 		= main.cpp \
-				Ship.cpp
+SRC_NAME = Ship.cpp Bullet.cpp main.cpp Game.cpp
 
-CLEAN_A		= @echo "\033[38;5;246mExecutable removed!"
-DONE		= @echo "\033[38;5;200mCompiled!"
+SRC = $(patsubst %, $(SRC_PATH)%, $(SRC_NAME))
+
+OBJ_NAME = $(SRC_NAME:.cpp=.o)
+OBJ = $(patsubst %, $(OBJ_PATH)%, $(OBJ_NAME))
 
 all: $(NAME)
 
-$(NAME):
-		@$(COMPILER) $(FLAGS) $(SRCS) -o $(NAME)
-		$(DONE)
+$(NAME): $(OBJ)
+	$(CC) -o $@ $(CFLAGS) $(DEBUG) $(OBJ) $(LDLIBS) -I$(INCLUDE_PATH) -lncurses
+	@mkdir -p $(EXE_PATH)
+	@cp $(NAME) $(EXE_PATH)
 
-fclean:
-	@rm -fr $(NAME) $(NAME).dSYM
-	$(CLEAN_A)
+$(OBJ_PATH)%.o: $(SRC_PATH)%.cpp
+	@mkdir -p $(OBJ_PATH)
+	$(CC) -o $@ $(CFLAGS) -I$(INCLUDE_PATH) $(DEBUG) -c $<
 
-re: fclean all 
+clean:
+	@rm -rf $(OBJ_PATH)
+
+fclean: clean
+	@rm -rf $(NAME)
+	@rm -rf $(EXE_PATH)
+
+re: fclean all
+
+.PHONY: clean fclean 

@@ -6,12 +6,12 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 22:04:08 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/30 22:29:54 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/30 23:47:48 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Ice.hpp"
+#include "Cure.hpp"
 
 /*
 ** -------------------------------- FUNC ---------------------------------------
@@ -24,7 +24,9 @@ AMateria*	Cure::clone(void) const
 
 void		Cure::use(ICharacter& target)
 {
-	std::cout << "* heals " << this->_type << "\’s wounds *" << std::endl;
+	std::cout << "Meow" << std::endl;
+	(void)target;
+	std::cout << "* heals " << "Hello" << "'s wounds *" << std::endl;
 	this->xp_ += 10;
 }
 
@@ -38,7 +40,7 @@ Cure		&Cure::operator=(Cure const &obj)
 	return (*this);
 }
 
-Cure::Cure(void): _type("cure") {}
+Cure::Cure(void) : AMateria("cure") {}
 
 Cure::~Cure(void)
 {

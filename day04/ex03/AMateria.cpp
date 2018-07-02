@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 22:03:49 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/30 23:00:36 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/30 23:28:06 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ unsigned int		AMateria::getXP(void) const
 	return (this->xp_);	
 }
 
-std::string const	&AMateria::getType() const
+std::string	const		&AMateria::getType() const
 {
 	return (this->_type);
 }
@@ -32,7 +32,6 @@ std::string const	&AMateria::getType() const
 /*
 ** -------------------------------- FUNC ---------------------------------------
 */
-void			AMateria::use(ICharacter& target) {}
 
 
 /*
@@ -55,7 +54,7 @@ AMateria::AMateria(std::string const &type): _type(type) {}
 
 AMateria::AMateria(AMateria const &obj)
 {
-	AMateria*this = obj;
+	*this = obj;
 }
 
 AMateria::~AMateria(void) {}

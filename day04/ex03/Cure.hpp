@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/30 22:04:13 by psprawka          #+#    #+#             */
-/*   Updated: 2018/06/30 22:28:46 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/06/30 23:34:53 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # define CURE_HPP
 
 #include <iostream>
+#include "AMateria.hpp"
 #include "ICharacter.hpp"
 
 class Cure : public AMateria
@@ -25,7 +26,8 @@ class Cure : public AMateria
 
 		Cure	&operator=(Cure const &obj);
 		
-		virtual Cure*	clone(void) const;
+		virtual AMateria*	clone(void) const;
+		virtual void		use(ICharacter& target);
 };
 
 #endif
