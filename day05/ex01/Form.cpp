@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 14:10:37 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 16:38:06 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 22:25:37 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,3 +105,14 @@ std::string		Form::beSigned(Bureaucrat &obj)
 	}
 	return ("signed");
 }
+
+Form::GradeTooLowException::GradeTooLowException(void) {}
+Form::GradeTooLowException::GradeTooLowException(GradeTooLowException const &) {}
+Form::GradeTooLowException &Form::GradeTooLowException::operator=(GradeTooLowException const &) {return (*this);}
+Form::GradeTooLowException::~GradeTooLowException(void) throw() {}
+
+
+Form::GradeTooHighException::GradeTooHighException(void) {}
+Form::GradeTooHighException::GradeTooHighException(GradeTooHighException const &) {}
+Form::GradeTooHighException &Form::GradeTooHighException::operator=(GradeTooHighException const &) {return (*this);}
+Form::GradeTooHighException::~GradeTooHighException(void) throw() {}

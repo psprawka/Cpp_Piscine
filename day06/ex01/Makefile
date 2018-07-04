@@ -6,26 +6,20 @@
 #    By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/25 07:43:47 by psprawka          #+#    #+#              #
-#    Updated: 2018/07/03 11:36:07 by psprawka         ###   ########.fr        #
+#    Updated: 2018/07/03 15:48:40 by psprawka         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= bureau
+NAME			= convert
 COMPILER		= clang++
-FLAGS			= -g -Wall -Wextra
+FLAGS			= -g -Wall -Wextra -Werror
 FLAGS			+=  -fsanitize=address
 
-SRCS = main.cpp \
-		Bureaucrat.cpp \
-		Form.cpp \
-		ShrubberyCreationForm.cpp \
-		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp \
-		Intern.cpp \
-		OfficeBlock.cpp \
-		CentralBureaucracy.cpp
+HEADERS	= Pony.hpp 		
+	
+SRCS = main.cpp
 
-					
+				
 CLEAN_A		= @echo "\033[38;5;246mExecutable removed!"
 DONE		= @echo "\033[38;5;200mCompiled!"
 

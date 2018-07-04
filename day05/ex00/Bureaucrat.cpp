@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:28:08 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 16:07:07 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 22:19:15 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ std::ostream &operator<<(std::ostream &os, Bureaucrat const &obj)
 int					Bureaucrat::getGrade(void) const {
 	return (this->_grade);
 }
-std::cout << third << std::endl;
+
 std::string const	Bureaucrat::getName(void) const {
 	return (this->_name);
 }
@@ -85,10 +85,6 @@ void		Bureaucrat::setGrade(int grade)
 	{
 		std::cout << e.what() << std::endl;
 	}
-}
-
-void		Bureaucrat::setName(std::string const name) {
-	this->_name = name;
 }
 
 
@@ -132,3 +128,13 @@ void		Bureaucrat::gradeDecrement(void)
 	}
 }
 
+Bureaucrat::GradeTooLowException::GradeTooLowException(void) {}
+Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException const &) {}
+Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(GradeTooLowException const &) {return (*this);}
+Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw() {}
+
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(void) {}
+Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException const &) {}
+Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(GradeTooHighException const &) {return (*this);}
+Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw() {}

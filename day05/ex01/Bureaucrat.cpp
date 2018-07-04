@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:28:08 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 16:36:41 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 22:22:46 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ Bureaucrat::~Bureaucrat(void) {}
 Bureaucrat &Bureaucrat::operator=(Bureaucrat const &obj)
 {
 	this->_grade = obj.getGrade();
-	this->_name = obj.getName();
 	return (*this);
 }
 
@@ -87,10 +86,6 @@ void		Bureaucrat::setGrade(int grade)
 	{
 		std::cout << e.what() << std::endl;
 	}
-}
-
-void		Bureaucrat::setName(std::string const name) {
-	this->_name = name;
 }
 
 
@@ -144,3 +139,14 @@ void		Bureaucrat::signForm(Form &obj)
 		std::cout << this->_name << " cannot sign " << obj.getName() << " because " 
 			<< msg << std::endl;
 }
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(void) {}
+Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException const &) {}
+Bureaucrat::GradeTooLowException &Bureaucrat::GradeTooLowException::operator=(GradeTooLowException const &) {return (*this);}
+Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw() {}
+
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(void) {}
+Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException const &) {}
+Bureaucrat::GradeTooHighException &Bureaucrat::GradeTooHighException::operator=(GradeTooHighException const &) {return (*this);}
+Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw() {}

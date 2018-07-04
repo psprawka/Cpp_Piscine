@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 14:10:37 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 21:22:13 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 23:22:14 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,3 +129,24 @@ bool		Form::execute(Bureaucrat const &executor) const
 	}
 	return (true);
 }
+
+Form::GradeTooLowException::GradeTooLowException(void) {}
+Form::GradeTooLowException::GradeTooLowException(GradeTooLowException const &) {}
+Form::GradeTooLowException &Form::GradeTooLowException::operator=(GradeTooLowException const &) {return (*this);}
+Form::GradeTooLowException::~GradeTooLowException(void) throw() {}
+
+
+Form::GradeTooHighException::GradeTooHighException(void) {}
+Form::GradeTooHighException::GradeTooHighException(GradeTooHighException const &) {}
+Form::GradeTooHighException &Form::GradeTooHighException::operator=(GradeTooHighException const &) {return (*this);}
+Form::GradeTooHighException::~GradeTooHighException(void) throw() {}
+
+Form::AlreadySigned::AlreadySigned(void) {}
+Form::AlreadySigned::AlreadySigned(AlreadySigned const &) {}
+Form::AlreadySigned &Form::AlreadySigned::operator=(AlreadySigned const &) {return (*this);}
+Form::AlreadySigned::~AlreadySigned(void) throw() {}
+
+Form::NotSigned::NotSigned(void) {}
+Form::NotSigned::NotSigned(NotSigned const &) {}
+Form::NotSigned &Form::NotSigned::operator=(NotSigned const &) {return (*this);}
+Form::NotSigned::~NotSigned(void) throw() {}

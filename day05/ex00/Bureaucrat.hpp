@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:28:12 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 16:07:01 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 22:19:42 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,25 @@ class Bureaucrat
 		std::string const	getName(void) const;
 
 		void				setGrade(int grade);
-		void				setName(std::string const name);
 		void				gradeIncrement(void);
 		void				gradeDecrement(void);
 		
 		class	GradeTooLowException : public std::exception {
-			virtual const char	*what() const throw();
+			public:
+				GradeTooLowException(void);
+				GradeTooLowException(GradeTooLowException const &);
+				~GradeTooLowException(void) throw();
+				GradeTooLowException &operator=(GradeTooLowException const &);
+				virtual const char	*what() const throw();
 		};
 
 		class	GradeTooHighException : public std::exception {
-			virtual const char	*what() const throw();
+			public:
+				GradeTooHighException(void);
+				GradeTooHighException(GradeTooHighException const &);
+				~GradeTooHighException(void) throw();
+				GradeTooHighException &operator=(GradeTooHighException const &);
+				virtual const char	*what() const throw();
 		};
 		
 };

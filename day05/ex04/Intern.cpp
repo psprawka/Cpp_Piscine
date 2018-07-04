@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 20:34:14 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 22:00:33 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 23:09:30 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,8 @@ Form	*Intern::makeForm(std::string form_name, std::string target)
 	throw Intern::NoForm();
 	return (NULL);
 }
+
+Intern::NoForm::NoForm(void) {}
+Intern::NoForm::NoForm(NoForm const &) {}
+Intern::NoForm &Intern::NoForm::operator=(NoForm const &) {return (*this);}
+Intern::NoForm::~NoForm(void) throw() {}

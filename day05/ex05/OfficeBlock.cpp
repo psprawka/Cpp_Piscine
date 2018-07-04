@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 21:34:07 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 22:20:22 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 13:19:20 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Intern.hpp"
 #include "Form.hpp"
 #include "OfficeBlock.hpp"
+#include <iostream>
 
 /* -------------------------- CANONICAL MODE --------------------------------*/
 
@@ -22,22 +23,37 @@ OfficeBlock &OfficeBlock::operator=(OfficeBlock const &) {
 	return (*this);
 }
 
-OfficeBlock::OfficeBlock(void) {}
-OfficeBlock::OfficeBlock(Intern &intern, Bureaucrat &signer, Bureaucrat &executer): _intern(intern), _signer(signer), _executer(executer) {}
+OfficeBlock::OfficeBlock(void): _intern(NULL), _signer(NULL), _executer(NULL) {}
+OfficeBlock::OfficeBlock(Intern &intern, Bureaucrat &signer, Bureaucrat &executer): _intern(&intern), _signer(&signer), _executer(&executer) {}
 OfficeBlock::~OfficeBlock(void) {}
+
+
+/* ------------------------------ GETTERS -----------------------------------*/
+
+Intern			*OfficeBlock::getIntern(void) const {
+	return (this->_intern);
+}
+
+Bureaucrat		*OfficeBlock::getSigner(void) const {
+	return (this->_signer);
+}
+
+Bureaucrat		*OfficeBlock::getExecutor(void) const {
+	return (this->_executer);
+}
 
 /* ------------------------------ SETTERS -----------------------------------*/
 
 void	OfficeBlock::setIntern(Intern &intern) {
-	this->_intern = intern;
+	this->_intern = &intern;
 }
 
 void	OfficeBlock::setSigner(Bureaucrat &signer) {
-	this->_signer = signer;
+	this->_signer = &signer;
 }
 
 void	OfficeBlock::setExecutor(Bureaucrat &executer) {
-	this->_executer = executer;
+	this->_executer = &executer;
 }
 
 
@@ -49,10 +65,10 @@ void	OfficeBlock::doBureaucracy(std::string form, std::string target)
 	
 	try
 	{
-		if ((form_one = this->_intern.makeForm(form, target)))
+		if ((form_one = this->_intern->makeForm(form, target)))
 		{
-			_signer.signForm(*form_one);
-			_executer.executeForm(*form_one);
+			_signer->signForm(*form_one);
+			_executer->executeForm(*form_one);
 		}
 		else
 			throw Intern::NoForm();

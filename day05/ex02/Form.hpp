@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 14:10:41 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 20:29:45 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 22:36:56 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,41 @@ class Form
 		std::string const	getName(void) const;
 		bool				getIsSigned(void) const;
 
+		
 		class	GradeTooLowException : public std::exception {
-			virtual const char	*what() const throw();
+			public:
+				GradeTooLowException(void);
+				GradeTooLowException(GradeTooLowException const &);
+				~GradeTooLowException(void) throw();
+				GradeTooLowException &operator=(GradeTooLowException const &);
+				virtual const char	*what() const throw();
 		};
 
 		class	GradeTooHighException : public std::exception {
-			virtual const char	*what() const throw();
+			public:
+				GradeTooHighException(void);
+				GradeTooHighException(GradeTooHighException const &);
+				~GradeTooHighException(void) throw();
+				GradeTooHighException &operator=(GradeTooHighException const &);
+				virtual const char	*what() const throw();
 		};
 
 		class	AlreadySigned : public std::exception {
-			virtual const char	*what() const throw();
+			public:
+				AlreadySigned(void);
+				AlreadySigned(AlreadySigned const &);
+				~AlreadySigned(void) throw();
+				AlreadySigned &operator=(AlreadySigned const &);
+				virtual const char	*what() const throw();
 		};
 
 		class	NotSigned : public std::exception {
-			virtual const char	*what() const throw();
+			public:
+				NotSigned(void);
+				NotSigned(NotSigned const &);
+				~NotSigned(void) throw();
+				NotSigned &operator=(NotSigned const &);
+				virtual const char	*what() const throw();
 		};
 
 		std::string		beSigned(Bureaucrat &obj);

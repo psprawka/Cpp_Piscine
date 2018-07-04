@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 20:34:08 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 21:59:42 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 23:08:07 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@ class Intern
 		~Intern(void);
 		
 		class	NoForm : public std::exception {
-			virtual const char	*what() const throw();
+			public:
+				NoForm(void);
+				NoForm(NoForm const &);
+				~NoForm(void) throw();
+				NoForm &operator=(NoForm const &);
+				virtual const char	*what() const throw();
 		};
 
 		Form	*makeForm(std::string form_name, std::string target);

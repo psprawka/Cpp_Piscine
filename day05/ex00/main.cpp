@@ -6,7 +6,7 @@
 /*   By: psprawka <psprawka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/02 12:28:23 by psprawka          #+#    #+#             */
-/*   Updated: 2018/07/02 14:09:05 by psprawka         ###   ########.fr       */
+/*   Updated: 2018/07/03 22:12:33 by psprawka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 
 int main(void)
 {
-	Bureaucrat first;
+	Bureaucrat first(149, "Pola");
 
-	first.setName("Pola");
-	first.setGrade(149);
 	std::cout << first << std::endl;
 	first.gradeDecrement();
 	first.gradeDecrement();
 	std::cout << first << std::endl << std::endl;
 
-	Bureaucrat second;
-	second.setName("Nick");
-	second.setGrade(200);
+	Bureaucrat second(200, "Nick");
+	std::cout << second << std::endl;
+	second.setGrade(20);
 	std::cout << second << std::endl << std::endl;
 
 	Bureaucrat third(-30, "Terence");
