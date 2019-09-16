@@ -4,14 +4,14 @@ This project is a quick introdution to Object Oriented Programming, as well as e
 </br>
 
 ### Subjects:
-* [Day00 of cpp piscine](https://github.com/psprawka/Cpp_piscine/day00/d00.en.pdf) 
-* [Day01 of cpp piscine](https://github.com/psprawka/Cpp_piscine/day01/d01.en.pdf)
-* [Day02 of cpp piscine](https://github.com/psprawka/Cpp_piscine/day02/d02.en.pdf)
-* [Day03 of cpp piscine](https://github.com/psprawka/Cpp_piscine/day03/d03.en.pdf)
-* [Day04 of cpp piscine](https://github.com/psprawka/Cpp_piscine/day04/d04.en.pdf)
-* [Day05 of cpp piscine](https://github.com/psprawka/Cpp_piscine/day05/d05.en.pdf)
-* [Day06 of cpp piscine](https://github.com/psprawka/Cpp_piscine/day06/d06.en.pdf)
-* [Rush00 - cpp piscine](https://github.com/psprawka/Cpp_piscine/rush00/rush00.en.pdf)
+* [Day00 of cpp piscine](https://github.com/psprawka/Cpp_Piscine/blob/master/day00/d00.en.pdf) 
+* [Day01 of cpp piscine](https://github.com/psprawka/Cpp_piscine/blob/master/day01/d01.en.pdf)
+* [Day02 of cpp piscine](https://github.com/psprawka/Cpp_piscine/blob/master/day02/d02.en.pdf)
+* [Day03 of cpp piscine](https://github.com/psprawka/Cpp_piscine/blob/master/day03/d03.en.pdf)
+* [Day04 of cpp piscine](https://github.com/psprawka/Cpp_piscine/blob/master/day04/d04.en.pdf)
+* [Day05 of cpp piscine](https://github.com/psprawka/Cpp_piscine/blob/master/day05/d05.en.pdf)
+* [Day06 of cpp piscine](https://github.com/psprawka/Cpp_piscine/blob/master/day06/d06.en.pdf)
+* [Rush00 - cpp piscine](https://github.com/psprawka/Cpp_piscine/blob/master/rush00/rush00.en.pdf)
 </br>
 
 
